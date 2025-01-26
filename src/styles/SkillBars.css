@@ -1,0 +1,36 @@
+.skills-container {
+    width: 80%;
+    margin: 0 auto;
+  }
+  
+  .skill {
+    margin: 15px 0;
+    color: #fff;
+  }
+  
+  .skill-bar {
+    width: 100%;
+    height: 20px;
+    background-color: #111;
+    border: 2px solid #00ffff;
+    border-radius: 10px;
+    overflow: hidden;
+    position: relative;
+  }
+  
+  .skill-bar-fill {
+    height: 100%;
+    background: linear-gradient(90deg, #ff0080, #ffcc00);
+    box-shadow: 0 0 15px #ff0080, 0 0 30px #ffcc00;
+    animation: fillAnimation 2s ease-in-out;
+  }
+  
+  @keyframes fillAnimation {
+    0% {
+      width: 0;
+    }
+    100% {
+      width: 100%;
+    }
+  }
+  

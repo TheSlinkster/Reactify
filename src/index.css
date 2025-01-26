@@ -1,0 +1,475 @@
+/* Global Styles for Cyberpunk */
+body {
+  margin: 0;
+  font-family: 'Orbitron', sans-serif; /* Cyberpunk-inspired font */
+  background-color: #000; /* Dark background */
+  color: #fff; /* Light text */
+  overflow-x: hidden;
+}
+
+/* Headings */
+h1, h2, h3 {
+  font-family: 'Audiowide', cursive;
+  color: #ff0080; /* Neon pink */
+  text-shadow: 0 0 5px #ff0080, 0 0 10px #ff0080, 0 0 20px #ffcc00;
+}
+
+h1, h2 {
+  text-shadow: 0 0 10px #ff0080, 0 0 20px #ffcc00, 0 0 30px #00ffff;
+}
+
+@keyframes neonFlicker {
+  0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% {
+    opacity: 1;
+  }
+  20%, 24%, 55% {
+    opacity: 0.4;
+  }
+}
+
+h1 {
+  animation: neonFlicker 2s infinite;
+}
+
+
+/* Buttons */
+button {
+  background: linear-gradient(90deg, #ff0080, #00ffff);
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 5px;
+  box-shadow: 0 0 10px #ff0080, 0 0 20px #00ffff;
+  transition: all 0.3s ease-in-out;
+}
+
+button:hover {
+  background: linear-gradient(90deg, #00ffff, #ff0080);
+  box-shadow: 0 0 20px #00ffff, 0 0 40px #ff0080;
+}
+
+/* Links */
+a {
+  color: #00ffff;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+a:hover {
+  color: #ff0080;
+}
+
+/* Containers */
+.container {
+  background-color: #111; /* Slightly lighter black */
+  border: 2px solid #00ffff;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 0 15px #00ffff, 0 0 30px #ff0080;
+}
+
+body.day {
+  background-color: #fffbff; /* Light neon background */
+  color: #fefdfd; /* Dark text */
+}
+
+body.dark {
+  /*background-color: #000; /* Dark background */
+  color: #fff; /* Light text */
+}
+
+.day h1, .day h2 {
+  color: #ff0080; /* Neon pink for headings */
+}
+
+.dark h1, .dark h2 {
+  color: #00ffff; /* Neon cyan for headings */
+}
+
+.theme-toggle {
+  position: relative;
+  top: 0px;
+  left: 00px;
+  background: linear-gradient(90deg, #ff0080, #ffcc00);
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 14px;
+  cursor: pointer;
+  border-radius: 5px;
+  box-shadow: 0 0 5px #ff0080, 0 0 10px #ffcc00;
+  transition: all 0.3s ease-in-out;
+}
+
+.theme-toggle:hover {
+  background: linear-gradient(90deg, #ffcc00, #ff0080);
+  box-shadow: 0 0 10px #ffcc00, 0 0 20px #ff0080;
+}
+/* Night Background Container */
+body.dark::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url('/assets/cybersplash.jpg') no-repeat center center/cover;
+  filter: brightness(0.6) contrast(1.2); /* Enhance image colors */
+  z-index: -2;
+}
+
+/* Neon Glow Layer */
+body.dark::after {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle, transparent, rgba(0, 0, 0, 0.8));
+  z-index: -1;
+}
+
+/* Flickering Neon Glow Animations */
+@keyframes neonPulse {
+  0%, 100% {
+    opacity: 0.8;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+.neon-light {
+  position: absolute;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background: #00ffff;
+  box-shadow: 0 0 20px #00ffff, 0 0 40px #00ffff, 0 0 80px #00ffff;
+  animation: neonPulse 2s infinite alternate;
+}
+
+/* City Lights */
+.neon-light.pink {
+  background: #ff0080;
+  box-shadow: 0 0 20px #ff0080, 0 0 40px #ff0080, 0 0 80px #ff0080;
+}
+
+.neon-light.yellow {
+  background: #ffcc00;
+  box-shadow: 0 0 20px #ffcc00, 0 0 40px #ffcc00, 0 0 80px #ffcc00;
+}
+
+/* Clouds for Depth */
+@keyframes moveClouds {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 1000px 500px;
+  }
+}
+
+.clouds {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 200%;
+  height: 100%;
+  background: url('/assets/clouds.png') repeat-x;
+  opacity: 0.3;
+  animation: moveClouds 30s linear infinite;
+  z-index: -1;
+}
+
+body.day::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to bottom, #000 0%, #111 100%);
+  z-index: -1;
+}
+
+body.day::after {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: repeating-linear-gradient(
+      to right,
+      transparent,
+      transparent 48px,
+      rgba(255, 255, 255, 0.1) 50px
+    ),
+    repeating-linear-gradient(
+      to bottom,
+      transparent,
+      transparent 48px,
+      rgba(255, 255, 255, 0.1) 50px
+    );
+  z-index: -1;
+  box-shadow: 0 0 10px #00ffff, 0 0 20px #00ffff;
+}
+
+@keyframes gridMove {
+  from {
+    background-position: 0 0;
+  }
+  to {
+    background-position: 100px 100px;
+  }
+}
+
+body.day::after {
+  animation: gridMove 100s linear infinite;
+}
+body.day::after {
+  background: repeating-linear-gradient(
+      to right,
+      transparent -20px,
+      transparent 48px,
+      rgba(255, 0, 255, 0.2) 50px
+    ),
+    repeating-linear-gradient(
+      to bottom,
+      transparent -20px,
+      transparent 48px,
+      rgba(0, 255, 255, 0.2) 50px
+    );
+}
+
+@keyframes gridMove {
+  from {
+    background-position: 0 0;
+  }
+  to {
+    background-position: 500px 500px; /* Align with grid spacing */
+  }
+}
+
+.audio-controls {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 30px; /* Space between elements */
+  margin-top: 0px;
+}
+
+.audio-control,
+.mute-control {
+  background: linear-gradient(90deg, #ff0080, #00ffff);
+  color: white;
+  flex-direction: row;
+  display: relative;
+  border: none;
+  padding: 10px 20px;
+  font-size: 14px;
+  cursor: pointer;
+  border-radius: 50px;
+  box-shadow: 0 0 10px #ff0080, 0 0 20px #00ffff;
+  transition: all 0.3s ease-in-out;
+}
+
+.audio-control:hover,
+.mute-control:hover {
+  background: linear-gradient(90deg, #00ffff, #ff0080);
+  box-shadow: 0 0 20px #00ffff, 0 0 40px #ff0080;
+}
+
+.volume-container {
+  position: relative;
+  width: 150px;
+}
+
+.volume-slider {
+  appearance: none;
+  display: right;
+  flex-direction: row;
+  width: 100%;
+  height: 8px;
+  border-radius: 5px;
+  background: linear-gradient(90deg, #ff0080, #00ffff);
+  outline: none;
+  cursor: pointer;
+  box-shadow: 0 0 10px #00ffff, 0 0 20px #ff0080;
+  transition: box-shadow 0.3s;
+}
+
+.volume-slider::-webkit-slider-thumb {
+  appearance: none;
+  width: 15px;
+  height: 15px;
+  background: white;
+  border-radius: 50%;
+  box-shadow: 0 0 10px #00ffff, 0 0 20px #ff0080;
+  cursor: pointer;
+}
+
+.volume-slider::-moz-range-thumb {
+  width: 15px;
+  height: 15px;
+  background: white;
+  border-radius: 50%;
+  box-shadow: 0 0 10px #00ffff, 0 0 20px #ff0080;
+  cursor: pointer;
+}
+
+.volume-tooltip {
+  position: absolute;
+  top: -5px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #000;
+  color: #fff;
+  font-size: 12px;
+  padding: 5px 10px;
+  border-radius: 5px;
+  box-shadow: 0 0 5px #00ffff;
+}
+
+/* Zap Animation: Start as a dot, grow into a trail, make a right-angle turn, and vanish 
+.zap {
+  position: absolute;
+  width: 4px; /* Start small as a dot 
+  height: 4px;
+  background: radial-gradient(circle, #ff0080 50%, transparent); /* Glowing dot 
+  border-radius: 50%;
+  animation: zapTrail 1.2s ease-out forwards, zapTurn 0.6s ease-in forwards 0.6s;
+}
+
+/* Discharge Animation 
+.discharge {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: radial-gradient(circle, #ffcc00, transparent);
+  animation: discharge 0.5s ease-out;
+}
+
+/* Trail Effect: Zap grows vertically and fades 
+@keyframes zapTrail {
+  0% {
+    width: 4px;
+    height: 4px;
+  }
+  50% {
+    width: 2px;
+    height: 50px; /* Vertical trail 
+    background: linear-gradient(to top, #ff0080, transparent);
+  }
+  100% {
+    width: 2px;
+    height: 50px;
+    background: linear-gradient(to right, #ff0080, transparent); /* Right angle 
+  }
+}
+
+/* Zap makes a right-angle turn 
+@keyframes zapTurn {
+  0% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translate(50px, 0); /* Move horizontally after the turn 
+  }
+}
+
+/* Discharge Animation: Glowing effect 
+@keyframes discharge {
+  0% {
+    width: 20px;
+    height: 20px;
+    background: radial-gradient(circle, #ffcc00, transparent);
+    opacity: 1;
+  }
+  100% {
+    width: 60px;
+    height: 60px;
+    background: radial-gradient(circle, transparent, transparent);
+    opacity: 0;
+  }
+}
+  */
+/* Zap Styling with Fading Trail */
+.zap {
+  position: fixed;
+  width: 6px; /* Initial size of the zap */
+  height: 6px;
+  background: radial-gradient(circle, #ff0080 50%, transparent); /* Glowing dot */
+  border-radius: 50%;
+  animation: zapTrail 4s linear infinite, zapMove 4s linear infinite;
+}
+
+/* Zap Movement (Clockwise) */
+@keyframes zapMove {
+  0% {
+    top: 0;
+    left: 0;
+  }
+  25% {
+    top: 0;
+    left: 100%;
+  }
+  50% {
+    top: 100%;
+    left: 100%;
+  }
+  75% {
+    top: 100%;
+    left: 0;
+  }
+  100% {
+    top: 0;
+    left: 0;
+  }
+}
+
+/* Zap Movement (Counterclockwise) */
+@keyframes zapMoveReverse {
+  0% {
+    top: 0;
+    left: 0;
+  }
+  25% {
+    top: 100%;
+    left: 0;
+  }
+  50% {
+    top: 100%;
+    left: 100%;
+  }
+  75% {
+    top: 0;
+    left: 100%;
+  }
+  100% {
+    top: 0;
+    left: 0;
+  }
+}
+
+/* Zap Trail Effect: Fading trail behind the zap */
+@keyframes zapTrail {
+  0% {
+    box-shadow: 0 0 10px #ff0080, 0 0 20px #ff0080, 0 0 30px #ff0080;
+    opacity: 1;
+  }
+  50% {
+    box-shadow: 0 0 5px #ff0080, 0 0 15px #ff0080, 0 0 25px transparent;
+    opacity: 0.7;
+  }
+  100% {
+    box-shadow: 0 0 2px #ff0080, 0 0 10px transparent, 0 0 20px transparent;
+    opacity: 0.4;
+  }
+}

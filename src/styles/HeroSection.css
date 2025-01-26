@@ -1,0 +1,40 @@
+
+.hero-section {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #00ffff;
+  }
+  
+  
+  .hero-content {
+    max-width: 800px;
+    border: 2px solid #ff0080;
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 0 20px #ff0080, 0 0 30px #00ffff;
+  }
+  
+  .hero-content h1 {
+    font-size: 3rem;
+    color: #00ffff;
+  }
+  
+  .hero-content p {
+    font-size: 1.5rem;
+    margin: 20px 0;
+  }
+  
+  
+  
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  

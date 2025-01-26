@@ -1,0 +1,5 @@
+{
+    "Clock": "components/Clock",
+    "Blocks": "components/Blocks",
+    "NestedComponent": "components/nested/NestedComponent"
+}

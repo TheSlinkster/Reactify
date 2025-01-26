@@ -1,0 +1,64 @@
+
+/* Desktop Container */
+.desktop-container {
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+    overflow: hidden;
+    font-family: 'Courier New', Courier, monospace;
+    color: #00ff00; /* Matrix green text */
+  }
+  
+  .desktop-container:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 2px,
+      rgba(0, 255, 0, 0.2) 2px,
+      rgba(0, 255, 0, 0.2) 4px
+    );
+    animation: matrix-rain 5s linear infinite;
+    z-index: -1;
+  }
+
+  /* Icon Symbol */
+.icon-symbol {
+    width: 48px; /* Adjust size to fit within 64px bounds */
+    height: 48px; /* Match the width */
+    background-size: contain; /* Ensure the icon is fully visible */
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 32px; /* Icon font size */
+    line-height: 48px; /* Center the icon */
+  }
+  
+  /* Icon Label */
+  .icon-label {
+    margin-top: 5px;
+    font-size: 12px; /* Smaller font size for the label */
+    text-align: center;
+    text-shadow: 0 0 5px #0ff, 0 0 10px #0ff; /* Glow effect for label */
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis; /* Prevent long text from overflowing */
+  }
+  
+  
+  /* Matrix Rain Animation */
+  @keyframes matrix-rain {
+    from {
+      background-position: 0 0;
+    }
+    to {
+      background-position: 0 100%;
+    }
+  }
+  

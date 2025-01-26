@@ -1,0 +1,50 @@
+/* Taskbar Container */
+.taskbar-container {
+    display: flex;
+    align-items: center;
+    gap: 20px; /* Spacing between buttons */
+  }
+  
+  /* Taskbar at bottom */
+  .taskbar {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 50px;
+    width: 100%;
+    background: linear-gradient(90deg, #1c5ea8, #3a78d4); /* Windows XP blue gradient */
+    border-top: 2px solid #3a78d4;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 0 15px;
+    z-index: 1000; /* Keep above other elements */
+    box-shadow: 0px -2px 5px rgba(0, 0, 0, 0.2); /* Subtle shadow for separation */
+  }
+  
+  /* Taskbar Button */
+  .taskbar-button {
+    width: 40px;
+    height: 40px;
+    background: #550000; /* Solid dark red */
+    border: 2px solid #770000; /* Clean border */
+    border-radius: 8px; /* Rounded corners */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px; /* Size for the emoji/icon */
+    color: white;
+    cursor: pointer;
+    transition: transform 0.2s, background 0.2s;
+  }
+  
+  .taskbar-button:hover {
+    transform: scale(1.1); /* Slight zoom */
+    background: rgb(180, 7, 7); /* Brighter red on hover */
+  }
+  
+  .taskbar-button:active {
+    transform: scale(0.95); /* Pressed effect */
+    background: rgb(90, 5, 5); /* Darker red when pressed */
+  }
+  

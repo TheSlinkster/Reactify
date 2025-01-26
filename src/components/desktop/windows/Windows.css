@@ -1,0 +1,159 @@
+/* TitleBar */
+.title-bar {
+    background: linear-gradient(90deg, #550000, #ff0000);
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: white;
+    text-shadow: 1px 1px 3px black;
+    padding: 0 15px;
+    border-bottom: 2px solid #550000;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 18px;
+  }
+  
+  /* TitleBar Left */
+  .title-bar-left {
+    display: flex;
+    align-items: center;
+  }
+  
+  /* TitleBar Text */
+  .title-bar-text {
+    font-weight: bold;
+    font-family: 'Neon', sans-serif;
+    text-shadow: 0 0 5px #0ff, 0 0 10px #0ff, 0 0 15px #0ff, 0 0 20px #0ff;
+  }
+  
+  /* TitleBar Buttons */
+  .title-bar-buttons {
+    display: flex;
+    gap: 8px;
+  }
+  
+  /* TitleBar Button */
+  .title-bar-button {
+    background: linear-gradient(135deg, #990000, #ff0000);
+    border: none;
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    box-shadow: 0 0 10px #ff0000;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  
+  .title-bar-button:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 20px #ff3333;
+  }
+  
+  /* Content Area */
+  .content-area {
+    flex: 1;
+    background: rgba(0, 0, 0, 0);
+    padding: 20px;
+    overflow-y: auto;
+    color: white;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 14px;
+    box-shadow: inset 0 0 10px #ff0000;
+  }
+  
+  /* Resize Handle */
+  .resize-handle {
+    width: 20px;
+    height: 20px;
+    background: linear-gradient(135deg, #550000, #ff0000);
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    border-radius: 50%;
+    cursor: nwse-resize;
+    box-shadow: 0 0 10px #ff0000;
+  }
+  
+  .resize-handle:hover {
+    box-shadow: 0 0 20px #ff3333;
+  }
+
+  /* Window Frame */
+.window-frame {
+    position: absolute;
+    border: 4px solid #550000; /* Default border color */
+    border-radius: 15px;
+    box-shadow: 0 0 15px #550000, 0 0 30px #550000; /* Default shadow color */
+    overflow: hidden;
+    color: white;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  /* Dynamic styles for topmost window */
+  .window-frame.is-topmost {
+    border-color: #ff0000;
+    box-shadow: 0 0 15px #ff0000, 0 0 30px #ff0000;
+  }
+  
+  /* Maximized window styles */
+  .window-frame.maximized {
+    left: 0 !important;
+    top: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    border-radius: 0;
+  }
+
+
+
+  /* use different style file*/
+
+  
+  /* Google Login Button */
+  .google-login-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: #4285F4;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 14px;
+  }
+  
+  .google-login-button:hover {
+    background-color: #357ae8;
+  }
+  
+  /* System Group Control */
+  .system-group {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 10px;
+    color: rgba(255, 255, 255, 0.2);
+    font-size: 12px;
+    text-align: center;
+  }
+  
+  /* Rubbish Bin Icon */
+  .rubbish-bin-icon {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    width: 64px;
+    height: 64px;
+    background-image: url('path/to/rubbish-bin-icon.png');
+    background-size: cover;
+    cursor: pointer;
+  }
+  
+  
